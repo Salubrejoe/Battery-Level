@@ -1,160 +1,100 @@
 //
-//  ViewController.swift
+//  BingVC.swift
 //  Battery Level
 //
 //  Created by Lore P on 02/03/2023.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController {
-  enum BatteryState {
-    case isCharging
-    case notCharging
-  }
   
-  var battery100Image = UIImage(systemName: "battery.100")!.withTintColor(.black, renderingMode: .alwaysOriginal)
-  var battery75Image = UIImage(systemName: "battery.75")!.withTintColor(.black, renderingMode: .alwaysOriginal)
-  var battery50Image = UIImage(systemName: "battery.50")!.withTintColor(.black, renderingMode: .alwaysOriginal)
-  var battery25Image = UIImage(systemName: "battery.25")!.withTintColor(.black, renderingMode: .alwaysOriginal)
-  var battery0Image = UIImage(systemName: "battery.0")!.withTintColor(.black, renderingMode: .alwaysOriginal)
-
+  // Create a label to display the battery percentage
+  let batteryLabel = UILabel()
   
-  let dagger = UIDevice.current
-  
-  var state: BatteryState!
-  
-  private var batteryImageView: UIImageView = {
-    
-    let view = UIImageView()
-    view.image = UIImage(systemName: "battery.100")
-    view.contentMode = .scaleAspectFit
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-  
-  private var batteryLevelLabel: UILabel = {
-    
-    let label = UILabel()
-    label.font = .systemFont(ofSize: 35, weight: .semibold)
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .center
-    return label
-  }()
-  private var batteryStatusLabel: UILabel = {
-    
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = .systemFont(ofSize: 15)
-    label.textAlignment = .center
-    return label
-  }()
-  
+  // Create an image view to display the battery symbol
+  let batteryImageView = UIImageView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "Battery level"
     view.backgroundColor = .systemBackground
     
-    configureUI()
+    // Enable battery monitoring
+    UIDevice.current.isBatteryMonitoringEnabled = true
     
-    getBatteryLevel()
-  }
-  
-  private func getBatteryLevel() {
-    dagger.isBatteryMonitoringEnabled = true
+    // Add an observer for the battery level change notification
+    NotificationCenter.default.addObserver(self, selector: #selector(batteryLevelDidChange), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
     
-    batteryImageView.tintColor = {
-      switch state {
-      case .isCharging:
-        return .systemYellow
-      case .notCharging:
-        return .systemGreen
-      case .none:
-        return .systemRed
-      }
-    }()
+    NotificationCenter.default.addObserver(self, selector: #selector(stateDidChange), name: UIDevice.batteryStateDidChangeNotification, object: nil)
     
-    let currentCharge = dagger.batteryLevel
-    let chargeStatus = dagger.batteryState
+    // Configure the label
+    batteryLabel.text = "\(Int(UIDevice.current.batteryLevel * 100))%"
+    batteryLabel.font = UIFont.systemFont(ofSize: 24)
+    batteryLabel.textAlignment = .center
     
-    // Set correct Image
-    if currentCharge >= 0.87 {
-      batteryImageView.image = battery100Image
-    } else if currentCharge < 0.87 && currentCharge >= 0.75 {
-      batteryImageView.image = battery75Image
-    } else if currentCharge < 0.75 && currentCharge >= 0.50 {
-      batteryImageView.image = battery50Image
-    } else if currentCharge < 0.50 && currentCharge >= 0.25 {
-      batteryImageView.image = battery25Image
-    } else if currentCharge < 0.25 {
-      batteryImageView.image = battery0Image
-    }
+    // Configure the image view
+    batteryImageView.image = UIImage(systemName: "battery.100")
+    batteryImageView.tintColor = .label
+    batteryImageView.contentMode = .scaleAspectFit
     
-    // Set up Percentage Label
-    let chargeFormatted = (currentCharge*100).formatted()
-    batteryLevelLabel.text = "\(chargeFormatted)%"
-    
-    
-    // Set up status Label
-    switch chargeStatus {
-    case .charging:
-      batteryStatusLabel.text = "Charging"
-      batteryImageView.tintColor = .systemYellow
-      state = .isCharging
-    case .unknown:
-      batteryImageView.image = UIImage(systemName: "xmark.octagon.fill")
-      batteryLevelLabel.text = "Unknown"
-      batteryStatusLabel.text = ""
-    case .full:
-      batteryLevelLabel.text = "100%"
-      batteryStatusLabel.text = "Fully charged!"
-      state = .notCharging
-    default:
-      batteryStatusLabel.text = ""
-      state = .notCharging
-    }
-  }
-  
-  
-  
-  
-}
-
-extension ViewController {
-  
-  private func configureUI() {
-    
+    // Add the label and image view as subviews
+    view.addSubview(batteryLabel)
     view.addSubview(batteryImageView)
-    view.addSubview(batteryLevelLabel)
-    view.addSubview(batteryStatusLabel)
     
-    let imageViewConstraints = [
-      batteryImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -90),
-      batteryImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      batteryImageView.heightAnchor.constraint(equalToConstant: 150),
-      batteryImageView.widthAnchor.constraint(equalToConstant: 200)
-    ]
+    // Set up constraints for layout
+    batteryLabel.translatesAutoresizingMaskIntoConstraints = false
+    batteryImageView.translatesAutoresizingMaskIntoConstraints = false
     
-    let levelLabelConstraints = [
-      batteryLevelLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-      batteryLevelLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      batteryLevelLabel.heightAnchor.constraint(equalToConstant: 50),
-      batteryLevelLabel.widthAnchor.constraint(equalToConstant: 200)
-    ]
-    
-    let statusLabelConstraints = [
-      batteryStatusLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 30),
-      batteryStatusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      batteryStatusLabel.heightAnchor.constraint(equalToConstant: 50),
-      batteryStatusLabel.widthAnchor.constraint(equalToConstant: 200)
-    ]
-    
-    NSLayoutConstraint.activate(imageViewConstraints)
-    NSLayoutConstraint.activate(levelLabelConstraints)
-    NSLayoutConstraint.activate(statusLabelConstraints)
+    NSLayoutConstraint.activate([
+      // Center the label horizontally and vertically
+      batteryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      batteryLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      
+      // Place the image view above and to the left of the label with some spacing
+      batteryImageView.bottomAnchor.constraint(equalTo: batteryLabel.topAnchor, constant: -8),
+      batteryImageView.centerXAnchor.constraint(equalTo: batteryLabel.centerXAnchor),
+      batteryImageView.widthAnchor.constraint(equalToConstant: 200),
+      batteryImageView.heightAnchor.constraint(equalToConstant: 30)
+      
+    ])
   }
+  
+  
+  @objc func stateDidChange() {
+    let state = UIDevice.current.batteryState.rawValue
+    
+    switch state {
+    case 2:
+      batteryImageView.tintColor = .systemYellow
+    default:
+      batteryImageView.tintColor = .label
+    }
+    
+  }
+  
+  @objc func batteryLevelDidChange(_ notification: Notification) {
+    
+    // Update the label text with the current battery level
+    let level = Int(UIDevice.current.batteryLevel * 100)
+    self.batteryLabel.text = "\(level)%"
+    
+    // Update the image view with an appropriate system symbol based on the level range
+    switch level {
+    case 0...10:
+      self.batteryImageView.image = UIImage(systemName: "battery.0")
+    case 11...25:
+      self.batteryImageView.image = UIImage(systemName: "battery.25")
+    case 26...50:
+      self.batteryImageView.image = UIImage(systemName: "battery.50")
+    case 51...75:
+      self.batteryImageView.image = UIImage(systemName: "battery.75")
+    default:
+      self.batteryImageView.image = UIImage(systemName: "battery.100")
+      
+    }
+    
+  }
+  
 }
-
-

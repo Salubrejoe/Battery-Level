@@ -9,25 +9,64 @@
 /* Begin PBXBuildFile section */
 		7CC3154929B0A7F400E84D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3154829B0A7F400E84D72 /* AppDelegate.swift */; };
 		7CC3154B29B0A7F400E84D72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3154A29B0A7F400E84D72 /* SceneDelegate.swift */; };
-		7CC3154D29B0A7F400E84D72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3154C29B0A7F400E84D72 /* ViewController.swift */; };
 		7CC3155229B0A7F600E84D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC3155129B0A7F600E84D72 /* Assets.xcassets */; };
 		7CC3155529B0A7F600E84D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC3155329B0A7F600E84D72 /* LaunchScreen.storyboard */; };
-		7CC3155D29B0C12D00E84D72 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3155C29B0C12D00E84D72 /* NewViewController.swift */; };
+		7CD9EE5129B1014D0003E50B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9EE5029B1014D0003E50B /* ViewController.swift */; };
+		7CD9EE5929B1148B0003E50B /* Battery_Level_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9EE5829B1148B0003E50B /* Battery_Level_WatchApp.swift */; };
+		7CD9EE5B29B1148B0003E50B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9EE5A29B1148B0003E50B /* ContentView.swift */; };
+		7CD9EE5D29B1148C0003E50B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9EE5C29B1148C0003E50B /* Assets.xcassets */; };
+		7CD9EE6029B1148C0003E50B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9EE5F29B1148C0003E50B /* Preview Assets.xcassets */; };
+		7CD9EE6329B1148C0003E50B /* Battery Level Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7CD9EE5629B1148B0003E50B /* Battery Level Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CD9EE6129B1148C0003E50B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC3153D29B0A7F400E84D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CD9EE5529B1148B0003E50B;
+			remoteInfo = "Battery Level Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CD9EE6429B1148C0003E50B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7CD9EE6329B1148C0003E50B /* Battery Level Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7CC3154529B0A7F400E84D72 /* Battery Level.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battery Level.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC3154829B0A7F400E84D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC3154A29B0A7F400E84D72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CC3154C29B0A7F400E84D72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CC3155129B0A7F600E84D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CC3155429B0A7F600E84D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CC3155629B0A7F600E84D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CC3155C29B0C12D00E84D72 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		7CD9EE5029B1014D0003E50B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7CD9EE5629B1148B0003E50B /* Battery Level Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battery Level Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CD9EE5829B1148B0003E50B /* Battery_Level_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery_Level_WatchApp.swift; sourceTree = "<group>"; };
+		7CD9EE5A29B1148B0003E50B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7CD9EE5C29B1148C0003E50B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CD9EE5F29B1148C0003E50B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7CC3154229B0A7F400E84D72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CD9EE5329B1148B0003E50B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC3154729B0A7F400E84D72 /* Battery Level */,
+				7CD9EE5729B1148B0003E50B /* Battery Level Watch Watch App */,
 				7CC3154629B0A7F400E84D72 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC3154529B0A7F400E84D72 /* Battery Level.app */,
+				7CD9EE5629B1148B0003E50B /* Battery Level Watch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +99,31 @@
 			children = (
 				7CC3154829B0A7F400E84D72 /* AppDelegate.swift */,
 				7CC3154A29B0A7F400E84D72 /* SceneDelegate.swift */,
-				7CC3154C29B0A7F400E84D72 /* ViewController.swift */,
-				7CC3155C29B0C12D00E84D72 /* NewViewController.swift */,
+				7CD9EE5029B1014D0003E50B /* ViewController.swift */,
 				7CC3155129B0A7F600E84D72 /* Assets.xcassets */,
 				7CC3155329B0A7F600E84D72 /* LaunchScreen.storyboard */,
 				7CC3155629B0A7F600E84D72 /* Info.plist */,
 			);
 			path = "Battery Level";
+			sourceTree = "<group>";
+		};
+		7CD9EE5729B1148B0003E50B /* Battery Level Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				7CD9EE5829B1148B0003E50B /* Battery_Level_WatchApp.swift */,
+				7CD9EE5A29B1148B0003E50B /* ContentView.swift */,
+				7CD9EE5C29B1148C0003E50B /* Assets.xcassets */,
+				7CD9EE5E29B1148C0003E50B /* Preview Content */,
+			);
+			path = "Battery Level Watch Watch App";
+			sourceTree = "<group>";
+		};
+		7CD9EE5E29B1148C0003E50B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7CD9EE5F29B1148C0003E50B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,14 +136,33 @@
 				7CC3154129B0A7F400E84D72 /* Sources */,
 				7CC3154229B0A7F400E84D72 /* Frameworks */,
 				7CC3154329B0A7F400E84D72 /* Resources */,
+				7CD9EE6429B1148C0003E50B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CD9EE6229B1148C0003E50B /* PBXTargetDependency */,
+			);
+			name = "Battery Level";
+			productName = "Battery Level";
+			productReference = 7CC3154529B0A7F400E84D72 /* Battery Level.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7CD9EE5529B1148B0003E50B /* Battery Level Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CD9EE6729B1148C0003E50B /* Build configuration list for PBXNativeTarget "Battery Level Watch Watch App" */;
+			buildPhases = (
+				7CD9EE5229B1148B0003E50B /* Sources */,
+				7CD9EE5329B1148B0003E50B /* Frameworks */,
+				7CD9EE5429B1148B0003E50B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Battery Level";
-			productName = "Battery Level";
-			productReference = 7CC3154529B0A7F400E84D72 /* Battery Level.app */;
+			name = "Battery Level Watch Watch App";
+			productName = "Battery Level Watch Watch App";
+			productReference = 7CD9EE5629B1148B0003E50B /* Battery Level Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,6 +176,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					7CC3154429B0A7F400E84D72 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					7CD9EE5529B1148B0003E50B = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -116,6 +197,7 @@
 			projectRoot = "";
 			targets = (
 				7CC3154429B0A7F400E84D72 /* Battery Level */,
+				7CD9EE5529B1148B0003E50B /* Battery Level Watch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +212,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CD9EE5429B1148B0003E50B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CD9EE6029B1148C0003E50B /* Preview Assets.xcassets in Resources */,
+				7CD9EE5D29B1148C0003E50B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,14 +228,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CC3154D29B0A7F400E84D72 /* ViewController.swift in Sources */,
 				7CC3154929B0A7F400E84D72 /* AppDelegate.swift in Sources */,
 				7CC3154B29B0A7F400E84D72 /* SceneDelegate.swift in Sources */,
-				7CC3155D29B0C12D00E84D72 /* NewViewController.swift in Sources */,
+				7CD9EE5129B1014D0003E50B /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CD9EE5229B1148B0003E50B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CD9EE5B29B1148B0003E50B /* ContentView.swift in Sources */,
+				7CD9EE5929B1148B0003E50B /* Battery_Level_WatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CD9EE6229B1148C0003E50B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CD9EE5529B1148B0003E50B /* Battery Level Watch Watch App */;
+			targetProxy = 7CD9EE6129B1148C0003E50B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7CC3155329B0A7F600E84D72 /* LaunchScreen.storyboard */ = {
@@ -275,6 +382,7 @@
 		7CC3155A29B0A7F600E84D72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +410,7 @@
 		7CC3155B29B0A7F600E84D72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +435,66 @@
 			};
 			name = Release;
 		};
+		7CD9EE6529B1148C0003E50B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Battery Level Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CLM5L23Y57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Battery Level Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = exercise.iTunesAPISearch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exercise.iTunesAPISearch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		7CD9EE6629B1148C0003E50B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Battery Level Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CLM5L23Y57;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Battery Level Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = exercise.iTunesAPISearch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exercise.iTunesAPISearch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +512,15 @@
 			buildConfigurations = (
 				7CC3155A29B0A7F600E84D72 /* Debug */,
 				7CC3155B29B0A7F600E84D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CD9EE6729B1148C0003E50B /* Build configuration list for PBXNativeTarget "Battery Level Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CD9EE6529B1148C0003E50B /* Debug */,
+				7CD9EE6629B1148C0003E50B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
